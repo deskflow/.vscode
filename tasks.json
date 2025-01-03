@@ -85,6 +85,9 @@
       "problemMatcher": [],
       "windows": {
         "command": "${workspaceFolder}/build/bin/deskflow.exe"
+      },
+      "osx": {
+        "command": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/Deskflow"
       }
     },
     {

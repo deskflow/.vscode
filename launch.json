@@ -7,7 +7,10 @@
       "cwd": "${workspaceRoot}",
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/deskflow",
-      "preLaunchTask": "build"
+      "preLaunchTask": "build",
+      "osx": {
+        "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/Deskflow"
+      }
     },
     {
       "name": "unix - unittests",
@@ -34,7 +37,10 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/deskflow-server",
       "args": ["--config-toml", "deskflow-config.toml"],
-      "preLaunchTask": "build"
+      "preLaunchTask": "build",
+      "osx": {
+        "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-server"
+      }
     },
     {
       "name": "unix - client",
@@ -43,7 +49,10 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/deskflow-client",
       "args": ["--config-toml", "deskflow-config.toml"],
-      "preLaunchTask": "build"
+      "preLaunchTask": "build",
+      "osx": {
+        "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-client"
+      }
     },
     {
       "name": "unix - attach",
