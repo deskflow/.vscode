@@ -14,7 +14,16 @@
       "problemMatcher": {
         "base": "$gcc",
         "fileLocation": ["absolute"]
-      }
+      },
+    },
+    {
+      "label": "install",
+      "type": "cmake",
+      "command": "build",
+      "targets": ["install"],
+      "preset": "${command:cmake.activeBuildPresetName}",
+      "group": "build",
+      "dependsOn": ["kill", "build"],
     },
     {
       "label": "clean",
@@ -81,10 +90,11 @@
       "label": "gui",
       "type": "process",
       "command": "${workspaceFolder}/build/bin/deskflow",
-      "dependsOn": ["build", "kill"],
       "problemMatcher": [],
+      "dependsOn": ["build"],
       "windows": {
-        "command": "${workspaceFolder}/build/bin/deskflow.exe"
+        "dependsOn": ["install"],
+        "command": "${workspaceFolder}/build/install/deskflow.exe"
       },
       "osx": {
         "command": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/Deskflow"

@@ -65,59 +65,59 @@
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin/deskflow",
+      "program": "${workspaceFolder}/build/install/deskflow",
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build"
+      "preLaunchTask": "install"
     },
     {
       "name": "windows - unittests",
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin/unittests",
+      "program": "${workspaceFolder}/build/install/unittests",
       "args": [ "${input:gtest-args}" ],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build"
+      "preLaunchTask": "install"
     },
     {
       "name": "windows - integtests",
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin/integtests",
+      "program": "${workspaceFolder}/build/install/integtests",
       "args": [ "${input:gtest-args}" ],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build"
+      "preLaunchTask": "install"
     },
     {
       "name": "windows - server",
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin/deskflow-server",
+      "program": "${workspaceFolder}/build/install/deskflow-server",
       "args": ["--config-toml", "deskflow-config.toml"],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build"
+      "preLaunchTask": "install"
     },
     {
       "name": "windows - client",
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin/deskflow-client",
+      "program": "${workspaceFolder}/build/install/deskflow-client",
       "args": ["--config-toml", "deskflow-config.toml"],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build"
+      "preLaunchTask": "install"
     },
     {
       "name": "windows - daemon",
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin/deskflow-daemon",
+      "program": "${workspaceFolder}/build/install/deskflow-daemon",
       "args": ["-f"],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build"
+      "preLaunchTask": "install"
     },
     {
       "name": "windows - attach",
