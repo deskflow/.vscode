@@ -17,13 +17,13 @@
       },
     },
     {
-      "label": "install",
-      "type": "cmake",
-      "command": "build",
-      "targets": ["install"],
-      "preset": "${command:cmake.activeBuildPresetName}",
-      "group": "build",
-      "dependsOn": ["kill", "build"],
+      "label": "build-kill-copy",
+      "type": "shell",
+      "dependsOn": ["build", "kill"],
+      "command": "echo 'Not supported on this platform'; exit 1",
+      "windows": {
+        "command": "robocopy ${workspaceFolder}/build/bin ${workspaceFolder}/build/bin-copy /E /S /R:1 /W:5; exit 0",
+      },
     },
     {
       "label": "clean",
@@ -82,19 +82,14 @@
       }
     },
     {
-      "label": "kill-build",
-      "dependsOn": ["kill", "build"],
-      "problemMatcher": []
-    },
-    {
       "label": "gui",
       "type": "process",
       "command": "${workspaceFolder}/build/bin/deskflow",
       "problemMatcher": [],
       "dependsOn": ["build"],
       "windows": {
-        "dependsOn": ["install"],
-        "command": "${workspaceFolder}/build/install/deskflow.exe"
+        "dependsOn": ["build-kill-copy"],
+        "command": "${workspaceFolder}/build/bin-copy/deskflow.exe"
       },
       "osx": {
         "command": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/Deskflow"
