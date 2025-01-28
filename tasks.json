@@ -19,7 +19,7 @@
     {
       "label": "build-kill-copy",
       "type": "shell",
-      "dependsOn": ["build", "kill"],
+      "dependsOn": ["build", "kill-all"],
       "command": "echo 'Not supported on this platform'; exit 1",
       "windows": {
         "command": "robocopy ${workspaceFolder}/build/bin ${workspaceFolder}/build/bin-copy /E /S /R:1 /W:5; exit 0",
@@ -71,11 +71,22 @@
       "problemMatcher": []
     },
     {
-      "label": "kill",
+      "label": "kill-all",
       "type": "shell",
       "command": "killall deskflow; killall deskflow-client; killall deskflow-server || true",
       "windows": {
         "command": "taskkill /F /IM deskflow.exe /IM deskflow-client.exe /IM deskflow-client.exe; $true"
+      },
+      "presentation": {
+        "reveal": "silent"
+      }
+    },
+    {
+      "label": "kill-core",
+      "type": "shell",
+      "command": "killall deskflow-client; killall deskflow-server || true",
+      "windows": {
+        "command": "taskkill /F /IM deskflow-client.exe /IM deskflow-client.exe; $true"
       },
       "presentation": {
         "reveal": "silent"
