@@ -55,6 +55,15 @@
       }
     },
     {
+      "name": "unix - daemon",
+      "type": "lldb",
+      "cwd": "${workspaceRoot}",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/bin/deskflow-core",
+      "args": ["daemon", "-f"],
+      "preLaunchTask": "build",
+    },
+    {
       "name": "unix - attach",
       "type": "lldb",
       "request": "attach",
@@ -114,8 +123,8 @@
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin-copy/deskflow-daemon",
-      "args": ["-f"],
+      "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
+      "args": ["daemon", "-f"],
       "internalConsoleOptions": "openOnSessionStart",
       "preLaunchTask": "build-kill-copy"
     },
