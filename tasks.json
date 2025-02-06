@@ -17,6 +17,19 @@
       },
     },
     {
+      "label": "build-silent",
+      "type": "cmake",
+      "command": "build",
+      "targets": ["all"],
+      "preset": "${command:cmake.activeBuildPresetName}",
+      "group": {
+        "kind": "build"
+      },
+      "presentation": {
+        "reveal": "silent",
+      }
+    },
+    {
       "label": "build-kill-copy",
       "type": "shell",
       "dependsOn": ["build", "kill-all"],

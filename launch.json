@@ -7,7 +7,7 @@
       "cwd": "${workspaceRoot}",
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/deskflow",
-      "preLaunchTask": "build",
+      "preLaunchTask": "build-silent",
       "osx": {
         "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/Deskflow"
       }
@@ -19,7 +19,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/unittests",
       "args": [ "${input:gtest-args}" ],
-      "preLaunchTask": "build"
+      "preLaunchTask": "build-silent"
     },
     {
       "name": "unix - integtests",
@@ -28,7 +28,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/integtests",
       "args": [ "${input:gtest-args}" ],
-      "preLaunchTask": "build",
+      "preLaunchTask": "build-silent",
     },
     {
       "name": "unix - server",
@@ -37,7 +37,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/deskflow-server",
       "args": ["--config-toml", "deskflow-config.toml"],
-      "preLaunchTask": "build",
+      "preLaunchTask": "build-silent",
       "osx": {
         "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-server"
       }
@@ -49,7 +49,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/deskflow-client",
       "args": ["--config-toml", "deskflow-config.toml"],
-      "preLaunchTask": "build",
+      "preLaunchTask": "build-silent",
       "osx": {
         "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-client"
       }
@@ -61,7 +61,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/deskflow-core",
       "args": ["daemon", "-f"],
-      "preLaunchTask": "build",
+      "preLaunchTask": "build-silent"
     },
     {
       "name": "unix - attach",
