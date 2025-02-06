@@ -32,11 +32,14 @@
     {
       "label": "build-kill-copy",
       "type": "shell",
-      "dependsOn": ["build", "kill-all"],
+      "dependsOn": ["build-silent", "kill-all"],
       "command": "echo 'Not supported on this platform'; exit 1",
       "windows": {
         "command": "robocopy ${workspaceFolder}/build/bin ${workspaceFolder}/build/bin-copy /E /S /R:1 /W:5; exit 0",
       },
+      "presentation": {
+        "reveal": "silent",
+      }
     },
     {
       "label": "clean",
