@@ -86,9 +86,9 @@
     {
       "label": "kill-all",
       "type": "shell",
-      "command": "killall deskflow; killall deskflow-client; killall deskflow-server || true",
+      "command": "killall deskflow; killall deskflow-core || true",
       "windows": {
-        "command": "taskkill /F /IM deskflow.exe /IM deskflow-client.exe /IM deskflow-client.exe; $true"
+        "command": "taskkill /F /IM deskflow.exe /IM deskflow-core.exe; $true"
       },
       "presentation": {
         "reveal": "silent"
@@ -97,9 +97,9 @@
     {
       "label": "kill-core",
       "type": "shell",
-      "command": "killall deskflow-client; killall deskflow-server || true",
+      "command": "killall deskflow-core || true",
       "windows": {
-        "command": "taskkill /F /IM deskflow-client.exe /IM deskflow-client.exe; $true"
+        "command": "taskkill /F /IM deskflow-core.exe; $true"
       },
       "presentation": {
         "reveal": "silent"
