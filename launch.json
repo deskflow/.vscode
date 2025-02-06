@@ -119,12 +119,32 @@
       "preLaunchTask": "build-kill"
     },
     {
-      "name": "windows - daemon",
+      "name": "windows - daemon start",
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
       "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
       "args": ["daemon", "-f"],
+      "internalConsoleOptions": "openOnSessionStart",
+      "preLaunchTask": "build-kill"
+    },
+    {
+      "name": "windows - daemon install",
+      "type": "cppvsdbg",
+      "cwd": "${workspaceRoot}",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
+      "args": ["daemon", "--install"],
+      "internalConsoleOptions": "openOnSessionStart",
+      "preLaunchTask": "build-kill"
+    },
+    {
+      "name": "windows - daemon uninstall",
+      "type": "cppvsdbg",
+      "cwd": "${workspaceRoot}",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
+      "args": ["daemon", "--uninstall"],
       "internalConsoleOptions": "openOnSessionStart",
       "preLaunchTask": "build-kill"
     },
