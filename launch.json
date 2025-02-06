@@ -76,7 +76,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin-copy/deskflow",
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill-copy"
+      "preLaunchTask": "build-kill"
     },
     {
       "name": "windows - unittests",
@@ -86,7 +86,7 @@
       "program": "${workspaceFolder}/build/bin-copy/unittests",
       "args": [ "${input:gtest-args}" ],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill-copy"
+      "preLaunchTask": "build-kill"
     },
     {
       "name": "windows - integtests",
@@ -96,7 +96,7 @@
       "program": "${workspaceFolder}/build/bin-copy/integtests",
       "args": [ "${input:gtest-args}" ],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill-copy"
+      "preLaunchTask": "build-kill"
     },
     {
       "name": "windows - server",
@@ -106,7 +106,7 @@
       "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
       "args": ["server", "--config-toml", "deskflow-config.toml"],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill-copy"
+      "preLaunchTask": "build-kill"
     },
     {
       "name": "windows - client",
@@ -116,7 +116,7 @@
       "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
       "args": ["client", "--config-toml", "deskflow-config.toml"],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill-copy"
+      "preLaunchTask": "build-kill"
     },
     {
       "name": "windows - daemon",
@@ -126,7 +126,7 @@
       "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
       "args": ["daemon", "-f"],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill-copy"
+      "preLaunchTask": "build-kill"
     },
     {
       "name": "windows - attach",
