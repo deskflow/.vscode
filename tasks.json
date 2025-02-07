@@ -12,9 +12,6 @@
         "kind": "build",
         "isDefault": true
       },
-      "presentation": {
-        "reveal": "silent",
-      }
     },
     {
       "label": "build-cmake",
@@ -27,9 +24,6 @@
         "base": "$gcc",
         "fileLocation": ["absolute"]
       },
-      "presentation": {
-        "reveal": "silent",
-      }
     },
     {
       "label": "build-silent",
