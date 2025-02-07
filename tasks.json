@@ -6,7 +6,7 @@
       "type": "shell",
       "dependsOn": ["build-cmake"],
       "windows": {
-        "command": "robocopy ${workspaceFolder}/build/bin ${workspaceFolder}/build/bin-copy /E /S /R:1 /W:5 /NJS /NFL /NDL /NJH /NP; exit 0"
+        "command": "robocopy ${workspaceFolder}/build/bin ${workspaceFolder}/build/bin-copy /R:0 /E /S /NJS /NJH /NFL /NDL; exit 0"
       },
       "group": {
         "kind": "build",
@@ -27,13 +27,14 @@
         "base": "$gcc",
         "fileLocation": ["absolute"]
       },
+      "presentation": {
+        "reveal": "silent",
+      }
     },
     {
       "label": "build-silent",
-      "type": "cmake",
-      "command": "build",
-      "targets": ["all"],
-      "preset": "${command:cmake.activeBuildPresetName}",
+      "type": "shell",
+      "dependsOn": ["build"],
       "group": "build",
       "presentation": {
         "reveal": "silent",
@@ -42,7 +43,7 @@
     {
       "label": "build-kill",
       "type": "shell",
-      "dependsOn": ["build-silent", "kill-all"],
+      "dependsOn": ["kill-all", "build-silent"],
       "group": "build",
       "presentation": {
         "reveal": "silent",
