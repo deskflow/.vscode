@@ -147,6 +147,13 @@
       },
     },
     {
+      "label": "daemon-restart",
+      "type": "shell",
+      "windows": {
+        "command": "Restart-Service -Name 'Deskflow'",
+      },
+    },
+    {
       "label": "daemon-deploy",
       "type": "shell",
       "windows": {
