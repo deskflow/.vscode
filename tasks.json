@@ -95,6 +95,7 @@
       "windows": {
         "command": "taskkill /F /IM deskflow.exe /IM deskflow-core.exe; $true"
       },
+      "dependsOn": ["daemon-stop"],
       "presentation": {
         "reveal": "silent"
       }
@@ -106,6 +107,7 @@
       "windows": {
         "command": "taskkill /F /IM deskflow-core.exe; $true"
       },
+      "dependsOn": ["daemon-stop"],
       "presentation": {
         "reveal": "silent"
       }
@@ -125,20 +127,18 @@
       }
     },
     {
-      "label": "daemon stop (windows)",
+      "label": "daemon-stop",
       "type": "shell",
       "windows": {
         "command": "Stop-Service -Name 'Deskflow' -Force; while ((Get-Service -Name 'Deskflow').Status -ne 'Stopped') { Start-Sleep -Seconds 1 }",
       },
-      "hide": true
     },
     {
-      "label": "daemon deploy (windows)",
+      "label": "daemon-start",
       "type": "shell",
       "windows": {
         "command": "Start-Service -Name 'Deskflow'; while ((Get-Service -Name 'Deskflow').Status -ne 'Running') { Start-Sleep -Seconds 1 }",
-      },
-      "dependsOn": ["daemon stop (windows)", "build-kill"]
+      }
     },
     {
       "label": "unittests (current)",
