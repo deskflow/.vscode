@@ -27,12 +27,12 @@
     },
     {
       "label": "build-kill-core",
-      "dependsOn": ["build", "kill-core"],
+      "dependsOn": ["kill-core", "build"],
       "dependsOrder": "sequence"
     },
     {
       "label": "build-kill-gui",
-      "dependsOn": ["build", "kill-gui"],
+      "dependsOn": ["kill-gui", "build"],
       "dependsOrder": "sequence"
     },
     {
