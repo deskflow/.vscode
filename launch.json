@@ -76,7 +76,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin-copy/deskflow",
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill"
+      "preLaunchTask": "build-kill-gui"
     },
     {
       "name": "windows - unittests",
@@ -85,8 +85,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin-copy/unittests",
       "args": [ "${input:gtest-args}" ],
-      "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill"
+      "internalConsoleOptions": "openOnSessionStart"
     },
     {
       "name": "windows - integtests",
@@ -95,8 +94,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin-copy/integtests",
       "args": [ "${input:gtest-args}" ],
-      "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill"
+      "internalConsoleOptions": "openOnSessionStart"
     },
     {
       "name": "windows - server",
@@ -106,7 +104,7 @@
       "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
       "args": ["server", "--config-toml", "deskflow-config.toml"],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill"
+      "preLaunchTask": "build-kill-core"
     },
     {
       "name": "windows - client",
@@ -116,7 +114,7 @@
       "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
       "args": ["client", "--config-toml", "deskflow-config.toml"],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill"
+      "preLaunchTask": "build-kill-core"
     },
     {
       "name": "windows - daemon start",
@@ -126,7 +124,7 @@
       "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
       "args": ["daemon", "-f"],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill"
+      "preLaunchTask": "build-kill-core"
     },
     {
       "name": "windows - daemon install",
@@ -136,7 +134,7 @@
       "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
       "args": ["daemon", "--install"],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill"
+      "preLaunchTask": "build-kill-core"
     },
     {
       "name": "windows - daemon uninstall",
@@ -146,7 +144,7 @@
       "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
       "args": ["daemon", "--uninstall"],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill"
+      "preLaunchTask": "build-kill-core"
     },
     {
       "name": "windows - attach",

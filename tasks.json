@@ -26,18 +26,35 @@
       },
     },
     {
+      "label": "build-kill-core",
+      "type": "cmake",
+      "command": "build",
+      "targets": ["all"],
+      "preset": "${command:cmake.activeBuildPresetName}",
+      "group": "build",
+      "problemMatcher": {
+        "base": "$gcc",
+        "fileLocation": ["absolute"]
+      },
+      "dependsOn": ["kill-core"]
+    },
+    {
+      "label": "build-kill-gui",
+      "type": "cmake",
+      "command": "build",
+      "targets": ["all"],
+      "preset": "${command:cmake.activeBuildPresetName}",
+      "group": "build",
+      "problemMatcher": {
+        "base": "$gcc",
+        "fileLocation": ["absolute"]
+      },
+      "dependsOn": ["kill-gui"]
+    },
+    {
       "label": "build-silent",
       "type": "shell",
       "dependsOn": ["build"],
-      "group": "build",
-      "presentation": {
-        "reveal": "silent",
-      }
-    },
-    {
-      "label": "build-kill",
-      "type": "shell",
-      "dependsOn": ["kill-all", "build-silent"],
       "group": "build",
       "presentation": {
         "reveal": "silent",
@@ -91,11 +108,7 @@
     {
       "label": "kill-all",
       "type": "shell",
-      "command": "killall deskflow; killall deskflow-core || true",
-      "windows": {
-        "command": "taskkill /F /IM deskflow.exe /IM deskflow-core.exe; $true"
-      },
-      "dependsOn": ["daemon-stop"],
+      "dependsOn": ["kill-core", "kill-gui"],
       "presentation": {
         "reveal": "silent"
       }
@@ -113,13 +126,24 @@
       }
     },
     {
+      "label": "kill-gui",
+      "type": "shell",
+      "command": "killall deskflow || true",
+      "windows": {
+        "command": "taskkill /F /IM deskflow.exe; $true"
+      },
+      "presentation": {
+        "reveal": "silent"
+      }
+    },
+    {
       "label": "gui",
       "type": "process",
       "command": "${workspaceFolder}/build/bin/deskflow",
       "problemMatcher": [],
       "dependsOn": ["build"],
       "windows": {
-        "dependsOn": ["build-kill"],
+        "dependsOn": ["build-kill-gui"],
         "command": "${workspaceFolder}/build/bin-copy/deskflow.exe"
       },
       "osx": {
@@ -146,7 +170,7 @@
       "windows": {
         "command": "Start-Service -Name 'Deskflow'; while ((Get-Service -Name 'Deskflow').Status -ne 'Running') { Start-Sleep -Seconds 1 }",
       },
-      "dependsOn": ["build-kill"]
+      "dependsOn": ["build-kill-core"]
     },
     {
       "label": "unittests (current)",
