@@ -134,6 +134,13 @@
       },
     },
     {
+      "label": "daemon-start",
+      "type": "shell",
+      "windows": {
+        "command": "Start-Service -Name 'Deskflow'; while ((Get-Service -Name 'Deskflow').Status -ne 'Running') { Start-Sleep -Seconds 1 }",
+      },
+    },
+    {
       "label": "daemon-deploy",
       "type": "shell",
       "windows": {
