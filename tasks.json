@@ -27,29 +27,11 @@
     },
     {
       "label": "build-kill-core",
-      "type": "cmake",
-      "command": "build",
-      "targets": ["all"],
-      "preset": "${command:cmake.activeBuildPresetName}",
-      "group": "build",
-      "problemMatcher": {
-        "base": "$gcc",
-        "fileLocation": ["absolute"]
-      },
-      "dependsOn": ["kill-core"]
+      "dependsOn": ["build", "kill-core"]
     },
     {
       "label": "build-kill-gui",
-      "type": "cmake",
-      "command": "build",
-      "targets": ["all"],
-      "preset": "${command:cmake.activeBuildPresetName}",
-      "group": "build",
-      "problemMatcher": {
-        "base": "$gcc",
-        "fileLocation": ["absolute"]
-      },
-      "dependsOn": ["kill-gui"]
+      "dependsOn": ["build", "kill-gui"]
     },
     {
       "label": "build-silent",
