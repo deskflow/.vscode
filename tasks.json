@@ -125,21 +125,20 @@
       }
     },
     {
-      "label": "restart daemon",
+      "label": "daemon stop (windows)",
       "type": "shell",
-      "command": "python scripts/daemon.py --restart",
-      "dependsOn": ["build"]
+      "windows": {
+        "command": "net stop Deskflow"
+      },
+      "hide": true
     },
     {
-      "label": "reinstall daemon",
+      "label": "daemon deploy (windows)",
       "type": "shell",
-      "command": "python scripts/daemon.py --reinstall",
-      "dependsOn": ["build"]
-    },
-    {
-      "label": "stop daemon",
-      "type": "shell",
-      "command": "python scripts/daemon.py --stop"
+      "windows": {
+        "command": "net start Deskflow"
+      },
+      "dependsOn": ["daemon stop (windows)", "build-kill"]
     },
     {
       "label": "unittests (current)",
