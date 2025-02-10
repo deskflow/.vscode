@@ -27,11 +27,13 @@
     },
     {
       "label": "build-kill-core",
-      "dependsOn": ["build", "kill-core"]
+      "dependsOn": ["build", "kill-core"],
+      "dependsOrder": "sequence"
     },
     {
       "label": "build-kill-gui",
-      "dependsOn": ["build", "kill-gui"]
+      "dependsOn": ["build", "kill-gui"],
+      "dependsOrder": "sequence"
     },
     {
       "label": "build-silent",
@@ -156,10 +158,8 @@
     {
       "label": "daemon-deploy",
       "type": "shell",
-      "windows": {
-        "command": "Start-Service -Name 'Deskflow'; while ((Get-Service -Name 'Deskflow').Status -ne 'Running') { Start-Sleep -Seconds 1 }",
-      },
-      "dependsOn": ["build-kill-core"]
+      "dependsOn": ["build-kill-core", "daemon-start"],
+      "dependsOrder": "sequence"
     },
     {
       "label": "unittests (current)",
