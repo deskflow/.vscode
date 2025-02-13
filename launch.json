@@ -35,11 +35,11 @@
       "type": "lldb",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin/deskflow-core",
-      "args": ["server", "--config-toml", "deskflow-config.toml"],
+      "program": "${workspaceFolder}/build/bin/deskflow-server",
+      "args": ["--config-toml", "deskflow-config.toml"],
       "preLaunchTask": "build-silent",
       "osx": {
-        "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-core"
+        "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-server"
       }
     },
     {
@@ -47,11 +47,11 @@
       "type": "lldb",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin/deskflow-core",
-      "args": ["client", "--config-toml", "deskflow-config.toml"],
+      "program": "${workspaceFolder}/build/bin/deskflow-client",
+      "args": ["--config-toml", "deskflow-config.toml"],
       "preLaunchTask": "build-silent",
       "osx": {
-        "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-core"
+        "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-client"
       }
     },
     {
@@ -59,8 +59,8 @@
       "type": "lldb",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin/deskflow-core",
-      "args": ["daemon", "-f"],
+      "program": "${workspaceFolder}/build/bin/deskflow-daemon",
+      "args": ["-f"],
       "preLaunchTask": "build-silent"
     },
     {
@@ -101,8 +101,8 @@
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
-      "args": ["server", "--config-toml", "deskflow-config.toml"],
+      "program": "${workspaceFolder}/build/bin-copy/deskflow-server",
+      "args": ["--config-toml", "deskflow-config.toml"],
       "internalConsoleOptions": "openOnSessionStart",
       "preLaunchTask": "build-kill-core"
     },
@@ -111,18 +111,28 @@
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
-      "args": ["client", "--config-toml", "deskflow-config.toml"],
+      "program": "${workspaceFolder}/build/bin-copy/deskflow-client",
+      "args": ["--config-toml", "deskflow-config.toml"],
       "internalConsoleOptions": "openOnSessionStart",
       "preLaunchTask": "build-kill-core"
     },
     {
-      "name": "windows - daemon start",
+      "name": "windows - daemon foreground",
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
-      "args": ["daemon", "-f"],
+      "program": "${workspaceFolder}/build/bin-copy/deskflow-daemon",
+      "args": ["-f"],
+      "internalConsoleOptions": "openOnSessionStart",
+      "preLaunchTask": "build-kill-core"
+    },
+    {
+      "name": "windows - daemon active-desktop",
+      "type": "cppvsdbg",
+      "cwd": "${workspaceRoot}",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/bin-copy/deskflow-daemon",
+      "args": ["--active-desktop"],
       "internalConsoleOptions": "openOnSessionStart",
       "preLaunchTask": "build-kill-core"
     },
@@ -131,8 +141,8 @@
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
-      "args": ["daemon", "--install"],
+      "program": "${workspaceFolder}/build/bin-copy/deskflow-daemon",
+      "args": ["/install"],
       "internalConsoleOptions": "openOnSessionStart",
       "preLaunchTask": "build-kill-core"
     },
@@ -141,8 +151,8 @@
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
-      "args": ["daemon", "--uninstall"],
+      "program": "${workspaceFolder}/build/bin-copy/deskflow-daemon",
+      "args": ["/uninstall"],
       "internalConsoleOptions": "openOnSessionStart",
       "preLaunchTask": "build-kill-core"
     },
