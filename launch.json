@@ -7,7 +7,7 @@
       "cwd": "${workspaceRoot}",
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/deskflow",
-      "preLaunchTask": "build-kill-gui",
+      "preLaunchTask": "build-kill-core",
       "osx": {
         "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/Deskflow"
       }
@@ -37,7 +37,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/deskflow-server",
       "args": ["--config-toml", "deskflow-config.toml"],
-      "preLaunchTask": "build-kill-core",
+      "preLaunchTask": "build-silent",
       "osx": {
         "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-server"
       }
@@ -49,7 +49,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/deskflow-client",
       "args": ["--config-toml", "deskflow-config.toml"],
-      "preLaunchTask": "build-kill-core",
+      "preLaunchTask": "build-silent",
       "osx": {
         "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-client"
       }
@@ -61,7 +61,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/deskflow-daemon",
       "args": ["-f"],
-      "preLaunchTask": "build-kill-core"
+      "preLaunchTask": "build-silent"
     },
     {
       "name": "unix - attach",
