@@ -27,12 +27,12 @@
     },
     {
       "label": "build-kill-core",
-      "dependsOn": ["kill-all-core", "build"],
+      "dependsOn": ["kill-daemon", "kill-core", "build"],
       "dependsOrder": "sequence"
     },
     {
       "label": "build-kill-gui",
-      "dependsOn": ["kill-gui", "kill-core", "kill-server", "kill-client", "build"],
+      "dependsOn": ["kill-gui", "kill-core", "build"],
       "dependsOrder": "sequence"
     },
     {
@@ -92,27 +92,14 @@
     {
       "label": "kill-all",
       "type": "shell",
-      "dependsOn": ["kill-gui", "kill-all-core"],
+      "dependsOn": ["kill-gui", "kill-daemon", "kill-core"],
     },
     {
-      "label": "kill-all-core",
+      "label": "kill-gui",
       "type": "shell",
-      "dependsOn": ["kill-daemon", "kill-server", "kill-client", "kill-core"],
-    },
-    {
-      "label": "kill-server",
-      "type": "shell",
-      "command": "killall deskflow-server || true",
+      "command": "killall deskflow || true",
       "windows": {
-        "command": "taskkill /F /IM deskflow-server.exe; $true"
-      },
-    },
-    {
-      "label": "kill-client",
-      "type": "shell",
-      "command": "killall deskflow-client || true",
-      "windows": {
-        "command": "taskkill /F /IM deskflow-client.exe; $true"
+        "command": "taskkill /F /IM deskflow.exe; $true"
       },
     },
     {
@@ -127,17 +114,9 @@
     {
       "label": "kill-core",
       "type": "shell",
-      "command": "killall deskflow-core || true",
+      "command": "killall deskflow-core deskflow-server deskflow-client || true",
       "windows": {
-        "command": "taskkill /F /IM deskflow-core.exe; $true"
-      },
-    },
-    {
-      "label": "kill-gui",
-      "type": "shell",
-      "command": "killall deskflow || true",
-      "windows": {
-        "command": "taskkill /F /IM deskflow.exe; $true"
+        "command": "taskkill /F /IM deskflow-core.exe; taskkill /F /IM deskflow-server.exe; taskkill /F /IM deskflow-client.exe; $true"
       },
     },
     {
