@@ -7,7 +7,7 @@
       "cwd": "${workspaceRoot}",
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/deskflow",
-      "preLaunchTask": "build-kill-core",
+      "preLaunchTask": "build-silent",
       "osx": {
         "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/Deskflow"
       }
