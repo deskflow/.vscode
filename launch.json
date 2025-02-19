@@ -144,7 +144,7 @@
       "program": "${workspaceFolder}/build/bin-copy/deskflow-daemon",
       "args": ["/install"],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill-core"
+      "preLaunchTask": "build"
     },
     {
       "name": "windows - daemon uninstall",
@@ -154,7 +154,7 @@
       "program": "${workspaceFolder}/build/bin-copy/deskflow-daemon",
       "args": ["/uninstall"],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill-core"
+      "preLaunchTask": "build"
     },
     {
       "name": "windows - attach",
