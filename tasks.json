@@ -97,7 +97,7 @@
     {
       "label": "kill-gui",
       "type": "shell",
-      "command": "killall deskflow || true",
+      "command": "killall -9 deskflow || true",
       "windows": {
         "command": "taskkill /F /IM deskflow.exe; $true"
       },
@@ -105,7 +105,7 @@
     {
       "label": "kill-daemon",
       "type": "shell",
-      "command": "killall deskflow-daemon || true",
+      "command": "killall -9 deskflow-daemon || true",
       "windows": {
         "command": "taskkill /F /IM deskflow-daemon.exe; $true"
       },
@@ -114,7 +114,7 @@
     {
       "label": "kill-core",
       "type": "shell",
-      "command": "killall deskflow-core deskflow-server deskflow-client || true",
+      "command": "killall -9 deskflow-core deskflow-server deskflow-client || true",
       "windows": {
         "command": "taskkill /F /IM deskflow-core.exe; taskkill /F /IM deskflow-server.exe; taskkill /F /IM deskflow-client.exe; $true"
       },
