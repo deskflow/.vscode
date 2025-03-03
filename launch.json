@@ -7,7 +7,7 @@
       "cwd": "${workspaceRoot}",
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/deskflow",
-      "preLaunchTask": "build",
+      "preLaunchTask": "build-silent",
       "osx": {
         "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/Deskflow"
       }
@@ -19,7 +19,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/unittests",
       "args": [ "${input:gtest-args}" ],
-      "preLaunchTask": "build"
+      "preLaunchTask": "build-silent"
     },
     {
       "name": "unix - integtests",
@@ -28,7 +28,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/integtests",
       "args": [ "${input:gtest-args}" ],
-      "preLaunchTask": "build",
+      "preLaunchTask": "build-silent",
     },
     {
       "name": "unix - server",
@@ -37,7 +37,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/deskflow-server",
       "args": ["--config-toml", "deskflow-config.toml"],
-      "preLaunchTask": "build",
+      "preLaunchTask": "build-silent",
       "osx": {
         "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-server"
       }
@@ -49,10 +49,19 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/deskflow-client",
       "args": ["--config-toml", "deskflow-config.toml"],
-      "preLaunchTask": "build",
+      "preLaunchTask": "build-silent",
       "osx": {
         "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-client"
       }
+    },
+    {
+      "name": "unix - daemon",
+      "type": "lldb",
+      "cwd": "${workspaceRoot}",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/bin/deskflow-daemon",
+      "args": ["-f"],
+      "preLaunchTask": "build-silent"
     },
     {
       "name": "unix - attach",
@@ -67,7 +76,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin-copy/deskflow",
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill-copy"
+      "preLaunchTask": "build-kill-gui"
     },
     {
       "name": "windows - unittests",
@@ -76,8 +85,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin-copy/unittests",
       "args": [ "${input:gtest-args}" ],
-      "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill-copy"
+      "internalConsoleOptions": "openOnSessionStart"
     },
     {
       "name": "windows - integtests",
@@ -86,8 +94,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin-copy/integtests",
       "args": [ "${input:gtest-args}" ],
-      "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill-copy"
+      "internalConsoleOptions": "openOnSessionStart"
     },
     {
       "name": "windows - server",
@@ -97,7 +104,7 @@
       "program": "${workspaceFolder}/build/bin-copy/deskflow-server",
       "args": ["--config-toml", "deskflow-config.toml"],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill-copy"
+      "preLaunchTask": "build-kill-core"
     },
     {
       "name": "windows - client",
@@ -107,30 +114,53 @@
       "program": "${workspaceFolder}/build/bin-copy/deskflow-client",
       "args": ["--config-toml", "deskflow-config.toml"],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill-copy"
+      "preLaunchTask": "build-kill-core"
     },
     {
-      "name": "windows - daemon",
+      "name": "windows - active-desktop",
+      "type": "cppvsdbg",
+      "cwd": "${workspaceRoot}",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
+      "args": ["--active-desktop"],
+      "internalConsoleOptions": "openOnSessionStart",
+      "preLaunchTask": "build-kill-core"
+    },
+    {
+      "name": "windows - daemon foreground",
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
       "program": "${workspaceFolder}/build/bin-copy/deskflow-daemon",
       "args": ["-f"],
       "internalConsoleOptions": "openOnSessionStart",
-      "preLaunchTask": "build-kill-copy"
+      "preLaunchTask": "build-kill-core"
+    },
+    {
+      "name": "windows - daemon install",
+      "type": "cppvsdbg",
+      "cwd": "${workspaceRoot}",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/bin-copy/deskflow-daemon",
+      "args": ["/install"],
+      "internalConsoleOptions": "openOnSessionStart",
+      "preLaunchTask": "build"
+    },
+    {
+      "name": "windows - daemon uninstall",
+      "type": "cppvsdbg",
+      "cwd": "${workspaceRoot}",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/bin-copy/deskflow-daemon",
+      "args": ["/uninstall"],
+      "internalConsoleOptions": "openOnSessionStart",
+      "preLaunchTask": "build"
     },
     {
       "name": "windows - attach",
       "type": "cppvsdbg",
       "request": "attach",
-      "processId": "${command:pickProcess}"
-    },
-    {
-      "name": "install_deps.py",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "scripts/install_deps.py",
-      "console": "integratedTerminal"
+      "processId": "${command:pickProcess}",
     }
   ],
   "inputs": [
