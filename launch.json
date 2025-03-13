@@ -142,7 +142,7 @@
       "cwd": "${workspaceRoot}",
       "request": "launch",
       "program": "${workspaceFolder}/build/bin-copy/deskflow-daemon",
-      "args": ["/install"],
+      "args": ["--install"],
       "internalConsoleOptions": "openOnSessionStart",
       "preLaunchTask": "build"
     },
@@ -152,7 +152,7 @@
       "cwd": "${workspaceRoot}",
       "request": "launch",
       "program": "${workspaceFolder}/build/bin-copy/deskflow-daemon",
-      "args": ["/uninstall"],
+      "args": ["--uninstall"],
       "internalConsoleOptions": "openOnSessionStart",
       "preLaunchTask": "build"
     },
