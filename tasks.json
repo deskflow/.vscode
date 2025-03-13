@@ -164,6 +164,26 @@
       "dependsOrder": "sequence"
     },
     {
+      "label": "daemon-install",
+      "type": "shell",
+      "windows": {
+        "command": "${workspaceFolder}/build/bin-copy/deskflow-daemon.exe --install"
+      }
+    },
+    {
+      "label": "daemon-uninstall",
+      "type": "shell",
+      "windows": {
+        "command": "${workspaceFolder}/build/bin-copy/deskflow-daemon.exe --uninstall"
+      }
+    },
+    {
+      "label": "daemon-reinstall",
+      "type": "shell",
+      "dependsOn": ["build-kill-core", "daemon-stop", "daemon-uninstall", "daemon-install"],
+      "dependsOrder": "sequence",
+    },
+    {
       "label": "unittests (current)",
       "type": "shell",
       "command": "python",
