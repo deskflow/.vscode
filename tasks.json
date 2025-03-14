@@ -166,6 +166,7 @@
     {
       "label": "daemon-install",
       "type": "shell",
+      "command": "echo noop > /dev/null",
       "windows": {
         "command": "${workspaceFolder}/build/bin-copy/deskflow-daemon.exe --install"
       }
@@ -173,6 +174,7 @@
     {
       "label": "daemon-uninstall",
       "type": "shell",
+      "command": "echo noop > /dev/null",
       "windows": {
         "command": "${workspaceFolder}/build/bin-copy/deskflow-daemon.exe --uninstall"
       }
