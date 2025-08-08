@@ -120,6 +120,14 @@
       }
     },
     {
+      "label": "kill-old",
+      "type": "shell",
+      "command": "./scripts/kill.py --keep-newest deskflow-core deskflow-server deskflow-client deskflow",
+      "windows": {
+        "command": "python ./scripts/kill.py --keep-newest deskflow-core deskflow-server deskflow-client deskflow"
+      }
+    },
+    {
       "label": "gui",
       "type": "process",
       "command": "${workspaceFolder}/build/bin/deskflow",
