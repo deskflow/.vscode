@@ -122,9 +122,9 @@
     {
       "label": "kill-old",
       "type": "shell",
-      "command": "./scripts/kill.py --keep-newest deskflow-core deskflow-server deskflow-client deskflow",
+      "command": "./scripts/kill.py --watch --keep-newest deskflow-core deskflow-server deskflow-client deskflow",
       "windows": {
-        "command": "python ./scripts/kill.py --keep-newest deskflow-core deskflow-server deskflow-client deskflow"
+        "command": "python ./scripts/kill.py --watch --keep-newest deskflow-core deskflow-server deskflow-client deskflow"
       }
     },
     {
