@@ -114,18 +114,15 @@
     {
       "label": "kill-core",
       "type": "shell",
-      "command": "killall -v -9 deskflow-core deskflow-server deskflow-client || true",
+      "command": "killall -v -9 deskflow-core || true",
       "windows": {
-        "command": "taskkill /F /IM deskflow-core.exe; taskkill /F /IM deskflow-server.exe; taskkill /F /IM deskflow-client.exe; $true"
+        "command": "taskkill /F /IM deskflow-core.exe; $true"
       }
     },
     {
       "label": "kill-orphans",
       "type": "shell",
-      "command": "./scripts/kill.py kill-orphans --watch --names deskflow-core deskflow-server deskflow-client",
-      "windows": {
-        "command": "python ./scripts/kill.py kill-orphans --watch --names deskflow-core deskflow-server deskflow-client"
-      }
+      "command": "./scripts/kill.py --keep-newest --orphans --watch --names deskflow-core"
     },
     {
       "label": "gui",
