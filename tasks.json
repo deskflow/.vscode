@@ -120,11 +120,11 @@
       }
     },
     {
-      "label": "kill-old",
+      "label": "kill-orphans",
       "type": "shell",
-      "command": "./scripts/kill.py --watch --keep-newest deskflow-core deskflow-server deskflow-client deskflow",
+      "command": "./scripts/kill.py kill-orphans --watch --names deskflow-core deskflow-server deskflow-client",
       "windows": {
-        "command": "python ./scripts/kill.py --watch --keep-newest deskflow-core deskflow-server deskflow-client deskflow"
+        "command": "python ./scripts/kill.py kill-orphans --watch --names deskflow-core deskflow-server deskflow-client"
       }
     },
     {
