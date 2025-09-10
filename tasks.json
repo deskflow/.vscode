@@ -168,7 +168,7 @@
       "type": "shell",
       "command": "echo noop > /dev/null",
       "windows": {
-        "command": "${workspaceFolder}/build/bin-copy/deskflow-daemon.exe --install"
+        "command": "sc.exe create Deskflow binPath= \"${workspaceFolder}\\build\\bin-copy\\deskflow-daemon.exe\" start= auto DisplayName= Deskflow"
       }
     },
     {
@@ -176,13 +176,13 @@
       "type": "shell",
       "command": "echo noop > /dev/null",
       "windows": {
-        "command": "${workspaceFolder}/build/bin-copy/deskflow-daemon.exe --uninstall"
+        "command": "sc.exe delete Deskflow"
       }
     },
     {
       "label": "daemon-reinstall",
       "type": "shell",
-      "dependsOn": ["build-kill-core", "daemon-stop", "daemon-uninstall", "daemon-install"],
+      "dependsOn": ["build-kill-core", "daemon-stop", "daemon-uninstall", "daemon-install", "daemon-start"],
       "dependsOrder": "sequence"
     },
     {
