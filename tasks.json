@@ -139,6 +139,17 @@
       }
     },
     {
+      "label": "daemon",
+      "type": "process",
+      "command": "echo noop > /dev/null",
+      "problemMatcher": [],
+      "dependsOn": ["daemon-stop", "build"],
+      "windows": {
+        "command": "${workspaceFolder}/build/bin-copy/deskflow-daemon.exe",
+        "args": ["-f"]
+      },
+    },
+    {
       "label": "daemon-stop",
       "type": "shell",
       "command": "echo noop > /dev/null",
