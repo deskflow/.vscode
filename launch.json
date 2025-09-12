@@ -18,7 +18,7 @@
       "cwd": "${workspaceRoot}",
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/unittests",
-      "args": [ "${input:gtest-args}" ],
+      "args": ["${input:gtest-args}"],
       "preLaunchTask": "build-silent"
     },
     {
@@ -27,19 +27,19 @@
       "cwd": "${workspaceRoot}",
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/integtests",
-      "args": [ "${input:gtest-args}" ],
-      "preLaunchTask": "build-silent",
+      "args": ["${input:gtest-args}"],
+      "preLaunchTask": "build-silent"
     },
     {
       "name": "unix - server",
       "type": "lldb",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin/deskflow-server",
-      "args": ["--config-toml", "deskflow-config.toml"],
+      "program": "${workspaceFolder}/build/bin/deskflow-core",
+      "args": ["server", "--config-toml", "deskflow-config.toml"],
       "preLaunchTask": "build-silent",
       "osx": {
-        "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-server"
+        "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-core"
       }
     },
     {
@@ -47,11 +47,11 @@
       "type": "lldb",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin/deskflow-client",
-      "args": ["--config-toml", "deskflow-config.toml"],
+      "program": "${workspaceFolder}/build/bin/deskflow-core",
+      "args": ["client", "--config-toml", "deskflow-config.toml"],
       "preLaunchTask": "build-silent",
       "osx": {
-        "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-client"
+        "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-core"
       }
     },
     {
@@ -84,7 +84,7 @@
       "cwd": "${workspaceRoot}",
       "request": "launch",
       "program": "${workspaceFolder}/build/bin-copy/unittests",
-      "args": [ "${input:gtest-args}" ],
+      "args": ["${input:gtest-args}"],
       "internalConsoleOptions": "openOnSessionStart"
     },
     {
@@ -93,7 +93,7 @@
       "cwd": "${workspaceRoot}",
       "request": "launch",
       "program": "${workspaceFolder}/build/bin-copy/integtests",
-      "args": [ "${input:gtest-args}" ],
+      "args": ["${input:gtest-args}"],
       "internalConsoleOptions": "openOnSessionStart"
     },
     {
@@ -101,8 +101,8 @@
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin-copy/deskflow-server",
-      "args": ["--config-toml", "deskflow-config.toml"],
+      "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
+      "args": ["server", "--config-toml", "deskflow-config.toml"],
       "internalConsoleOptions": "openOnSessionStart",
       "preLaunchTask": "build-kill-core"
     },
@@ -111,8 +111,8 @@
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin-copy/deskflow-client",
-      "args": ["--config-toml", "deskflow-config.toml"],
+      "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
+      "args": ["client", "--config-toml", "deskflow-config.toml"],
       "internalConsoleOptions": "openOnSessionStart",
       "preLaunchTask": "build-kill-core"
     },
@@ -140,7 +140,7 @@
       "name": "windows - attach",
       "type": "cppvsdbg",
       "request": "attach",
-      "processId": "${command:pickProcess}",
+      "processId": "${command:pickProcess}"
     }
   ],
   "inputs": [
