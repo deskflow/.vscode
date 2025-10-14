@@ -35,11 +35,11 @@
       "type": "lldb",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin/deskflow-server",
-      "args": ["--config-toml", "deskflow-config.toml"],
+      "program": "${workspaceFolder}/build/bin/deskflow-core",
+      "args": ["server"],
       "preLaunchTask": "build-silent",
       "osx": {
-        "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-server"
+        "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-core"
       }
     },
     {
@@ -47,11 +47,11 @@
       "type": "lldb",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin/deskflow-client",
-      "args": ["--config-toml", "deskflow-config.toml"],
+      "program": "${workspaceFolder}/build/bin/deskflow-core",
+      "args": ["client"],
       "preLaunchTask": "build-silent",
       "osx": {
-        "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-client"
+        "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/deskflow-core"
       }
     },
     {
@@ -101,8 +101,8 @@
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin-copy/deskflow-server",
-      "args": ["--config-toml", "deskflow-config.toml"],
+      "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
+      "args": ["server"],
       "internalConsoleOptions": "openOnSessionStart",
       "preLaunchTask": "build-kill-core"
     },
@@ -111,8 +111,8 @@
       "type": "cppvsdbg",
       "cwd": "${workspaceRoot}",
       "request": "launch",
-      "program": "${workspaceFolder}/build/bin-copy/deskflow-client",
-      "args": ["--config-toml", "deskflow-config.toml"],
+      "program": "${workspaceFolder}/build/bin-copy/deskflow-core",
+      "args": ["client"],
       "internalConsoleOptions": "openOnSessionStart",
       "preLaunchTask": "build-kill-core"
     },
