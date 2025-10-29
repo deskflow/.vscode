@@ -45,6 +45,14 @@
       }
     },
     {
+      "label": "package",
+      "type": "cmake",
+      "command": "build",
+      "targets": ["package"],
+      "preset": "${command:cmake.activeBuildPresetName}",
+      "group": "build"
+    },
+    {
       "label": "clean",
       "type": "cmake",
       "command": "build",
