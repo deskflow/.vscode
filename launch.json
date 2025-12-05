@@ -6,6 +6,7 @@
       "type": "lldb-dap",
       "cwd": "${workspaceRoot}",
       "request": "launch",
+      "runInTerminal": true, // Deprecated option is required for LLDB-DAP v20
       "program": "${workspaceFolder}/build/bin/deskflow",
       "preLaunchTask": "build-silent",
       "osx": {
@@ -17,8 +18,9 @@
       "type": "lldb-dap",
       "cwd": "${workspaceRoot}",
       "request": "launch",
+      "runInTerminal": true, // Deprecated option is required for LLDB-DAP v20
       "program": "${workspaceFolder}/build/bin/unittests",
-      "args": [ "${input:gtest-args}" ],
+      "args": ["${input:gtest-args}"],
       "preLaunchTask": "build-silent"
     },
     {
@@ -26,15 +28,17 @@
       "type": "lldb-dap",
       "cwd": "${workspaceRoot}",
       "request": "launch",
+      "runInTerminal": true, // Deprecated option is required for LLDB-DAP v20
       "program": "${workspaceFolder}/build/bin/integtests",
-      "args": [ "${input:gtest-args}" ],
-      "preLaunchTask": "build-silent",
+      "args": ["${input:gtest-args}"],
+      "preLaunchTask": "build-silent"
     },
     {
       "name": "unix - server",
       "type": "lldb-dap",
       "cwd": "${workspaceRoot}",
       "request": "launch",
+      "runInTerminal": true, // Deprecated option is required for LLDB-DAP v20
       "program": "${workspaceFolder}/build/bin/deskflow-core",
       "args": ["server"],
       "preLaunchTask": "build-silent",
@@ -47,6 +51,7 @@
       "type": "lldb-dap",
       "cwd": "${workspaceRoot}",
       "request": "launch",
+      "runInTerminal": true, // Deprecated option is required for LLDB-DAP v20
       "program": "${workspaceFolder}/build/bin/deskflow-core",
       "args": ["client"],
       "preLaunchTask": "build-silent",
@@ -59,6 +64,7 @@
       "type": "lldb-dap",
       "cwd": "${workspaceRoot}",
       "request": "launch",
+      "runInTerminal": true, // Deprecated option is required for LLDB-DAP v20
       "program": "${workspaceFolder}/build/bin/deskflow-daemon",
       "args": ["-f"],
       "preLaunchTask": "build-silent"
@@ -84,7 +90,7 @@
       "cwd": "${workspaceRoot}",
       "request": "launch",
       "program": "${workspaceFolder}/build/bin-copy/unittests",
-      "args": [ "${input:gtest-args}" ],
+      "args": ["${input:gtest-args}"],
       "internalConsoleOptions": "openOnSessionStart"
     },
     {
@@ -93,7 +99,7 @@
       "cwd": "${workspaceRoot}",
       "request": "launch",
       "program": "${workspaceFolder}/build/bin-copy/integtests",
-      "args": [ "${input:gtest-args}" ],
+      "args": ["${input:gtest-args}"],
       "internalConsoleOptions": "openOnSessionStart"
     },
     {
@@ -140,7 +146,7 @@
       "name": "windows - attach",
       "type": "cppvsdbg",
       "request": "attach",
-      "processId": "${command:pickProcess}",
+      "processId": "${command:pickProcess}"
     }
   ],
   "inputs": [
