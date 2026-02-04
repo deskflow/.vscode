@@ -9,6 +9,7 @@
       "runInTerminal": true, // Deprecated option is required for LLDB-DAP v20
       "program": "${workspaceFolder}/build/bin/deskflow",
       "preLaunchTask": "build-silent",
+      "initCommands": ["settings set target.preload-symbols false"],
       "osx": {
         "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/Deskflow"
       }
