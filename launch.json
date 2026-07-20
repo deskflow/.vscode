@@ -9,6 +9,7 @@
       "program": "${workspaceFolder}/build/bin/deskflow",
       "preLaunchTask": "build-silent",
       "initCommands": ["settings set target.preload-symbols false"],
+      "preRunCommands": ["process handle SIGPIPE -s false -n false"],
       "osx": {
         "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/Deskflow"
       }
