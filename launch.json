@@ -8,7 +8,11 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/deskflow",
       "preLaunchTask": "build-silent",
-      "initCommands": ["settings set target.preload-symbols false"],
+      "initCommands": [
+        "settings set target.preload-symbols false",
+        "settings set target.process.follow-fork-mode parent",
+        "settings set target.process.stop-on-exec false"
+      ],
       "osx": {
         "program": "${workspaceFolder}/build/bin/Deskflow.app/Contents/MacOS/Deskflow"
       }
